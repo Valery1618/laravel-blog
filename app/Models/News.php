@@ -18,8 +18,7 @@ class News extends Model
 
     public static function getOne($id): News
     {
-        //return self::find($id);
-        return News::select('news.*', 'authors.name', 'rubrics.title AS rubric_title')
+        return News::select('news.*', 'authors.name AS author_name', 'rubrics.title AS rubric_title')
             ->join('authors', 'news.author_id', '=', 'authors.id')
             ->join('rubrics', 'news.rubric_id', '=', 'rubrics.id')
             ->where('news.id', '=', $id)
