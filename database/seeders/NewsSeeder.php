@@ -15,17 +15,13 @@ class NewsSeeder extends Seeder
      */
     public function run(): void
     {
-        News::truncate();//
-        Author::truncate();
-        Rubric::truncate();
-
-        // Створення авторів
+        // Create authors
         $authors = Author::factory()->count(5)->create();
 
-        // Створення рубрик
+        // Create rubrics
         $rubrics = Rubric::factory()->count(3)->create();
 
-        // Створення новин з прив'язкою до рубрик і авторів
+        // Creation of news with reference to rubrics and authors
         $authors->each(function ($author) use ($rubrics) {
             News::factory()
                 ->count(4)
