@@ -15,7 +15,8 @@ services:
             - ./:/var/www
         networks:
             - laravel-blog
-
+        ports:
+            - "5173:5173"
     db:
         image: mysql
         container_name: laravel-blog-db
@@ -31,6 +32,7 @@ services:
             - "3878:3306"
         volumes:
             - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+            - db_data:/var/lib/mysql
         networks:
             - laravel-blog
 
@@ -49,3 +51,5 @@ services:
 networks:
     laravel-blog:
         driver: bridge
+volumes:
+    db_data:
