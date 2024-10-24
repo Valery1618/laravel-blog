@@ -32,6 +32,7 @@ services:
             - "3878:3306"
         volumes:
             - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+            - db_data:/var/lib/mysql
         networks:
             - laravel-blog
 
@@ -50,3 +51,5 @@ services:
 networks:
     laravel-blog:
         driver: bridge
+volumes:
+    db_data:
