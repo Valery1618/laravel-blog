@@ -5,16 +5,15 @@
         </h2>
     </x-slot>
 
-    <div class="h-screen flex">
+    <div class="min-h-screen flex">
         <!-- Sidebar -->
-        <div class="shrink-0 w-[28rem] h-full bg-gray-800 text-white flex flex-col">
+        <div class="shrink-0 w-[14rem] h-full bg-gray-800 text-white flex flex-col">
             <h3 class="text-center py-4 text-xl font-semibold">Admin Panel</h3>
             <nav class="flex-grow">
-                <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
+                <a href="news" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">News</a>
+                <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Rubrics</a>
                 <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Users</a>
-                <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Settings</a>
-                <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
-                <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Logout</a>
+
             </nav>
         </div>
 
