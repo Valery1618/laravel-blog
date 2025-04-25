@@ -10,4 +10,9 @@ class Author extends Model
 {
     use HasFactory;
 
+    public function news(): HasMany
+    {
+        return $this->hasMany(News::class);
+    }
+
 }
