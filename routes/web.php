@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RubricController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,5 +22,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/news', [NewsController::class, 'showList']);
 Route::get('/news/{id}', [NewsController::class, 'showOne']);
+Route::get('/authors', [AuthorController::class, 'loadAuthors']);
+Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor']);
+Route::get('/rubrics', [RubricController::class, 'loadRubrics']);
+Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric']);
 
 require __DIR__.'/auth.php';
