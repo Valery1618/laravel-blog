@@ -30,16 +30,17 @@ class News extends Model
     }
 
 
-    public static function getOne($id): News
+    public static function getOne(int $id): News
     {
         return self::with(['author', 'rubric'])->findOrFail($id);
     }
-    /*public static function getOne($id): News
+
+    public static function getAllNewsByAuthorId(int $authorId): Collection
     {
-        return News::select('news.*', 'authors.name AS author_name', 'rubrics.title AS rubric_title')
-            ->join('authors', 'news.author_id', '=', 'authors.id')
-            ->join('rubrics', 'news.rubric_id', '=', 'rubrics.id')
-            ->where('news.id', '=', $id)
-            ->first();
-    }*/
+    }
+
+    public static function getAllNewsByRubricId(int $rubricId): Collection
+    {
+    }
+
 }

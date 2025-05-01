@@ -20,11 +20,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/news', [NewsController::class, 'showList']);
-Route::get('/news/{id}', [NewsController::class, 'showOne']);
-Route::get('/authors', [AuthorController::class, 'loadAuthors']);
-Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor']);
-Route::get('/rubrics', [RubricController::class, 'loadRubrics']);
-Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric']);
+Route::get('/news', [NewsController::class, 'showList'])->name('news.showList');
+Route::get('/news/{id}', [NewsController::class, 'showOne'])->name('news.showOne');
+Route::get('/authors', [AuthorController::class, 'loadAuthors'])->name('authors.loadAuthors');
+Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])->name('authors.loadOneAuthor');;
+Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.loadRubrics');
+Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])->name('rubrics.loadOneRubric');
 
 require __DIR__.'/auth.php';

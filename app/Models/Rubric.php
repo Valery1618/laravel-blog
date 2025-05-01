@@ -23,9 +23,9 @@ class Rubric extends Model
 
     }
 
-    public static function getRubricById($rubricId): Rubric
+    public static function getRubricById(int $rubricId): Rubric
     {
-        return self::findOrFail($rubricId);
+        return self::with(['news.author'])->findOrFail($rubricId);
     }
 
 }

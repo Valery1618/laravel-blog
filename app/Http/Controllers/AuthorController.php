@@ -14,7 +14,7 @@ class AuthorController extends Controller
         return view('/authors/all_authors', ['authors' => Author::getAllAuthors()]);
     }
 
-    public function loadOneAuthor(string $authorId): View
+    public function loadOneAuthor(int $authorId): View
     {
         return view('/authors/one_author', ['author' => Author::getAuthorById($authorId)]);
     }
