@@ -24,8 +24,8 @@ class Author extends Model
 
     }
 
-    public static function  getAuthorById($authorId): Author
+    public static function  getAuthorById(int $authorId): Author
     {
-        return self::findOrFail($authorId);
+        return self::with(['news.rubric'])->findOrFail($authorId);
     }
 }

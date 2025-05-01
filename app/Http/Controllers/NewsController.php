@@ -12,7 +12,7 @@ class NewsController extends Controller
         return view('/news/list', ['news' => News::getList()]);
     }
 
-    public function showOne(string $id): View
+    public function showOne(int $id): View
     {
         return view('/news/one', ['newsOne' => News::getOne($id)]);
     }

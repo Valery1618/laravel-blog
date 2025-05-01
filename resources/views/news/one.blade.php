@@ -18,7 +18,9 @@
             <div class="card-text">
                 {!! nl2br(e($newsOne->content)) !!}
             </div>
-            <a href="/news" class="btn btn-link mt-4">← Назад до списку новин</a>
+            <a href="{{route('news.showList')}}" class="btn btn-link mt-4">← До списку новин</a>
+            <a href="{{ route('authors.loadOneAuthor', $newsOne->author->id) }}" class="btn btn-link mt-4">← До списку новин автора</a>
+            <a href="/dashboard" class="btn btn-link mt-4">← Головна сторінка</a>
         </div>
     </div>
 </div>

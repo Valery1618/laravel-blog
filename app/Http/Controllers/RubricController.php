@@ -13,7 +13,7 @@ class RubricController extends Controller
         return view('/rubrics/all_rubrics', ['rubrics' => Rubric::getAllRubrics()]);
     }
 
-    public function loadOneRubric(string $rubricId): View
+    public function loadOneRubric(int $rubricId): View
     {
         return view('/rubrics/one_rubric', ['rubric' => Rubric::getRubricById($rubricId)]);
     }
