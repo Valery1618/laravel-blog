@@ -35,12 +35,12 @@ class News extends Model
         return self::with(['author', 'rubric'])->findOrFail($id);
     }
 
-    public static function getAllNewsByAuthorId(int $authorId): Collection
+    /*public static function createNews():
     {
-    }
-
-    public static function getAllNewsByRubricId(int $rubricId): Collection
-    {
-    }
+         self::insertAndSetId([
+            'title' => request('title'),
+            'content' => request('content'),
+        ])
+    } */
 
 }
