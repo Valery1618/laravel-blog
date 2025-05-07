@@ -16,4 +16,9 @@ class NewsController extends Controller
     {
         return view('/news/one', ['newsOne' => News::getOne($id)]);
     }
+
+    /*public function create(): View
+    {
+        return view('/news/create', ['createNews' => News::createNews()]);
+    }*/
 }
