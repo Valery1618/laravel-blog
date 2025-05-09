@@ -13,6 +13,8 @@ class News extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'content', 'author_id', 'rubric_id'];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(Author::class);
@@ -35,12 +37,9 @@ class News extends Model
         return self::with(['author', 'rubric'])->findOrFail($id);
     }
 
-    /*public static function createNews():
+    public static function createNews(array $data): News
     {
-         self::insertAndSetId([
-            'title' => request('title'),
-            'content' => request('content'),
-        ])
-    } */
+        return self::create($data);
+    }
 
 }

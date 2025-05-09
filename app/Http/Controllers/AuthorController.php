@@ -18,4 +18,6 @@ class AuthorController extends Controller
     {
         return view('/authors/one_author', ['author' => Author::getAuthorById($authorId)]);
     }
+
+
 }
