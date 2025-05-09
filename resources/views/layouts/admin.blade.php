@@ -15,7 +15,7 @@
             <ul class="navbar-nav me-auto">
                 {{-- Додаткові посилання можна додати сюди --}}
             </ul>
-            {{--<a href="{{ route('news.create') }}" class="btn btn-outline-light">+ Створити новину</a>--}}
+            <a href="{{ route('createNews') }}" class="btn btn-outline-light">+ Створити новину</a>
         </div>
     </div>
 </nav>

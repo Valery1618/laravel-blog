@@ -26,6 +26,9 @@ Route::get('/authors', [AuthorController::class, 'loadAuthors'])->name('authors.
 Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])->name('authors.loadOneAuthor');;
 Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.loadRubrics');
 Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])->name('rubrics.loadOneRubric');
-//Route::get('/news/create',  [NewsController::class, 'create'])->name('news.create');
+Route::get('/create',  [NewsController::class, 'getForm'])->name('createNews');
+Route::post('/create', [NewsController::class, 'store'])->name('storeNews');
+
+
 
 require __DIR__.'/auth.php';
