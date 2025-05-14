@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Список авторів')
-@section('header', 'Автори')
+@section('title', 'Автори')
+@section('header', 'Список авторів')
 @section('add-button')
     <a href="{{ route('authors.createAuthor') }}" class="btn btn-outline-light">+ Додати автора</a>
 @endsection

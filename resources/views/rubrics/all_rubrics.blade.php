@@ -3,7 +3,7 @@
 @section('title', 'Рубрики')
 @section('header', 'Список рубрик')
 @section('add-button')
-    <a href="{{ route('createNews') }}" class="btn btn-outline-light">+ Створити новину</a>
+    <a href="{{ route('rubrics.createRubric') }}" class="btn btn-outline-light">+ Додати рубрику</a>
 @endsection
 
 @section('content')

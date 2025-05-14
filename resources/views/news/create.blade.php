@@ -2,6 +2,8 @@
 
 @section('title', 'Створити новину')
 
+@section('header', 'Створити новину')
+
 @section('content')
     <form method="POST" action="{{ route('news.storeNews') }}">
         @csrf

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Список новин')
-@section('header', 'Новини')
+@section('title', 'Новини')
+@section('header', 'Список новин')
 @section('add-button')
     <a href="{{ route('news.createNews') }}" class="btn btn-outline-light">+ Створити новину</a>
 @endsection
