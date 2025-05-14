@@ -2,6 +2,9 @@
 
 @section('title', 'Список авторів')
 @section('header', 'Автори')
+@section('add-button')
+    <a href="{{ route('authors.createAuthor') }}" class="btn btn-outline-light">+ Додати автора</a>
+@endsection
 
 @section('content')
     @forelse($authors as $author)

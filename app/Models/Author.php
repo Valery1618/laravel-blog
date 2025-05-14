@@ -12,6 +12,8 @@ class Author extends Model
 {
     use HasFactory;
 
+    protected  $fillable = ['name'];
+
 
     public function news(): HasMany
     {
@@ -27,5 +29,10 @@ class Author extends Model
     public static function  getAuthorById(int $authorId): Author
     {
         return self::with(['news.rubric'])->findOrFail($authorId);
+    }
+
+    public static function createAuthor(array $data): Author
+    {
+        return self::create($data);
     }
 }
