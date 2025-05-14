@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'Створити новину')
+@section('title', 'Створити нового автора')
+
+@section('header', 'Новий автор')
 
 @section('content')
         <form method="POST" action="{{ route('authors.storeAuthor') }}">

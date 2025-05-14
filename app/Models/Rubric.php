@@ -11,6 +11,7 @@ class Rubric extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title'];
 
     public function news(): HasMany
     {
@@ -26,6 +27,11 @@ class Rubric extends Model
     public static function getRubricById(int $rubricId): Rubric
     {
         return self::with(['news.author'])->findOrFail($rubricId);
+    }
+
+    public static function createRubric(array $data): Rubric
+    {
+        return self::create($data);
     }
 
 }
