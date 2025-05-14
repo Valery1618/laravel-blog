@@ -2,6 +2,9 @@
 
 @section('title', 'Список новин')
 @section('header', 'Новини')
+@section('add-button')
+    <a href="{{ route('news.createNews') }}" class="btn btn-outline-light">+ Створити новину</a>
+@endsection
 
 @section('content')
     @forelse ($news as $newsOne)

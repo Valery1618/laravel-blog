@@ -3,7 +3,7 @@
 @section('title', 'Створити новину')
 
 @section('content')
-    <form method="POST" action="{{ route('storeNews') }}">
+    <form method="POST" action="{{ route('news.storeNews') }}">
         @csrf
 
         <div class="mb-3">

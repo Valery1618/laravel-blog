@@ -21,13 +21,16 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/news', [NewsController::class, 'showList'])->name('news.showList');
+Route::get('/news/create',  [NewsController::class, 'getForm'])->name('news.createNews');
+Route::post('/news/create', [NewsController::class, 'store'])->name('news.storeNews');
 Route::get('/news/{id}', [NewsController::class, 'showOne'])->name('news.showOne');
 Route::get('/authors', [AuthorController::class, 'loadAuthors'])->name('authors.loadAuthors');
+Route::get('/authors/createAuthor', [AuthorController::class, 'getAuthorForm'])->name('authors.createAuthor');
+Route::post('/authors/createAuthor', [AuthorController::class, 'storeAuthor'])->name('authors.storeAuthor');
 Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])->name('authors.loadOneAuthor');;
 Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.loadRubrics');
 Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])->name('rubrics.loadOneRubric');
-Route::get('/create',  [NewsController::class, 'getForm'])->name('createNews');
-Route::post('/create', [NewsController::class, 'store'])->name('storeNews');
+
 
 
 
