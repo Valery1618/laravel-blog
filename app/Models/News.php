@@ -42,4 +42,10 @@ class News extends Model
         return self::create($data);
     }
 
+    public static function editNews(int $id, array $data): News
+    {
+        $news = self::getOne($id);
+        $news->update($data);
+        return $news;
+    }
 }
