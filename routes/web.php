@@ -24,6 +24,8 @@ Route::get('/news', [NewsController::class, 'showList'])->name('news.showList');
 Route::get('/news/create',  [NewsController::class, 'getForm'])->name('news.createNews');
 Route::post('/news/create', [NewsController::class, 'store'])->name('news.storeNews');
 Route::get('/news/{id}', [NewsController::class, 'showOne'])->name('news.showOne');
+Route::get('/news/{id}/edit', [NewsController::class, 'editForm'])->name('news.editNews');
+Route::put('/news/{id}', [NewsController::class, 'updateNews'])->name('news.updateNews');
 Route::get('/authors', [AuthorController::class, 'loadAuthors'])->name('authors.loadAuthors');
 Route::get('/authors/create', [AuthorController::class, 'getAuthorForm'])->name('authors.createAuthor');
 Route::post('/authors/create', [AuthorController::class, 'storeAuthor'])->name('authors.storeAuthor');
