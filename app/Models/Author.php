@@ -35,4 +35,11 @@ class Author extends Model
     {
         return self::create($data);
     }
+
+    public static function  editAuthor(int $authorId, array $data): Author
+    {
+        $author = self::getAuthorById($authorId);
+        $author->update($data);
+        return $author;
+    }
 }

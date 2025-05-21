@@ -35,5 +35,22 @@ class AuthorController extends Controller
         return redirect()->route('authors.loadAuthors')->with('success', 'Додано нового автора');
     }
 
+    public function editAuthorForm($authorId): View
+    {
+        return view('/authors/edit_author', [
+            'author' => Author::getAuthorById($authorId)
+        ]);
+    }
+
+    public function updateAuthor(int $authorId, Request $request): RedirectResponse
+    {
+        $validated =  $request->validate([
+            'name'  => 'required|string|max:255'
+        ]);
+
+        Author::editAuthor($authorId, $validated);
+
+        return redirect()->route('authors.loadOneAuthor', $authorId)->with('success', 'Автора оновлено');
+    }
 
 }

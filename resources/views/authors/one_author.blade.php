@@ -4,6 +4,7 @@
 @section('header', 'Новини автора: ' . $author->name)
 
 @section('content')
+    <a href="{{ route('authors.editAuthor', $author->id) }}" class="btn btn-warning mb-3">Редагувати автора</a>
     @forelse($author->news as $news)
         <div class="card mb-3">
             <div class="card-body">
