@@ -29,7 +29,9 @@ Route::put('/news/{id}', [NewsController::class, 'updateNews'])->name('news.upda
 Route::get('/authors', [AuthorController::class, 'loadAuthors'])->name('authors.loadAuthors');
 Route::get('/authors/create', [AuthorController::class, 'getAuthorForm'])->name('authors.createAuthor');
 Route::post('/authors/create', [AuthorController::class, 'storeAuthor'])->name('authors.storeAuthor');
-Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])->name('authors.loadOneAuthor');;
+Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])->name('authors.loadOneAuthor');
+Route::get('/authors/{id}/edit', [AuthorController::class, 'editAuthorForm'])->name('authors.editAuthor');
+Route::put('/authors/{id}', [AuthorController::class, 'updateAuthor'])->name('authors.updateAuthor');
 Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.loadRubrics');
 Route::get('/rubrics/create', [RubricController::class, 'getRubricForm'])->name('rubrics.createRubric');
 Route::post('/rubrics/create',  [RubricController::class, 'storeRubric'])->name('rubrics.storeRubric');
