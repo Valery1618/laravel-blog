@@ -50,4 +50,10 @@ class RubricController extends Controller
         Rubric::editRubric($rubricId, $validated);
         return redirect()->route('rubrics.loadOneRubric', $rubricId)->with('success', 'Рубрика відредагована');
     }
+
+    public function destroyRubric(int $rubricId): RedirectResponse
+    {
+        Rubric::deleteRubric($rubricId);
+        return redirect()->route('rubrics.loadRubrics', $rubricId)->with('success', 'Рубрику видалено');
+    }
 }
