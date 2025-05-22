@@ -33,6 +33,7 @@ Route::post('/authors/create', [AuthorController::class, 'storeAuthor'])->name('
 Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])->name('authors.loadOneAuthor');
 Route::get('/authors/{id}/edit', [AuthorController::class, 'editAuthorForm'])->name('authors.editAuthor');
 Route::put('/authors/{id}', [AuthorController::class, 'updateAuthor'])->name('authors.updateAuthor');
+Route::delete('/authors/{id}', [AuthorController::class, 'destroyAuthor'])->name('authors.destroyAuthor');
 Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.loadRubrics');
 Route::get('/rubrics/create', [RubricController::class, 'getRubricForm'])->name('rubrics.createRubric');
 Route::post('/rubrics/create',  [RubricController::class, 'storeRubric'])->name('rubrics.storeRubric');

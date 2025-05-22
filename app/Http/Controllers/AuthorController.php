@@ -53,4 +53,10 @@ class AuthorController extends Controller
         return redirect()->route('authors.loadOneAuthor', $authorId)->with('success', 'Автора оновлено');
     }
 
+    public function destroyAuthor(int $authorId): RedirectResponse
+    {
+        Author::deleteAuthor($authorId);
+        return redirect()->route('authors.loadAuthors', $authorId)->with('success', 'Автора видалено');
+    }
+
 }
