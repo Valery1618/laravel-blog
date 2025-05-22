@@ -33,4 +33,21 @@ class RubricController extends Controller
 
         return redirect()->route('rubrics.loadRubrics')->with('success', 'Нова рубрика додана');
     }
+
+    public function editRubricForm(int $rubricId): View
+    {
+        return view('/rubrics/edit_rubric', [
+            'rubric' => Rubric::getRubricById($rubricId)
+        ]);
+    }
+
+    public function updateRubric(int $rubricId, Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255'
+        ]);
+
+        Rubric::editRubric($rubricId, $validated);
+        return redirect()->route('rubrics.loadOneRubric', $rubricId)->with('success', 'Рубрика відредагована');
+    }
 }

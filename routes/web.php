@@ -36,6 +36,8 @@ Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.
 Route::get('/rubrics/create', [RubricController::class, 'getRubricForm'])->name('rubrics.createRubric');
 Route::post('/rubrics/create',  [RubricController::class, 'storeRubric'])->name('rubrics.storeRubric');
 Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])->name('rubrics.loadOneRubric');
+Route::get('/rubrics/{id}/edit', [RubricController::class, 'editRubricForm'])->name('rubrics.editRubric');
+Route::put('/rubrics/{id}',  [RubricController::class, 'updateRubric'])->name('rubrics.updateRubric');
 
 
 

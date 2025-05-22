@@ -34,4 +34,11 @@ class Rubric extends Model
         return self::create($data);
     }
 
+    public static function editRubric(int $rubricId, array $data): Rubric
+    {
+        $rubric = self::getRubricById($rubricId);
+        $rubric->update($data);
+        return $rubric;
+    }
+
 }

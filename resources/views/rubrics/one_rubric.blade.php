@@ -4,6 +4,7 @@
 @section('header', 'Новини рубрики: ' . $rubric->title)
 
 @section('content')
+    <a href="{{ route('rubrics.editRubric', $rubric->id) }}" class="btn btn-warning mb-3">Редагувати рубрику</a>
     @forelse($rubric->news as $news)
         <div class="card mb-3">
             <div class="card-body">
