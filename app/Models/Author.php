@@ -42,4 +42,9 @@ class Author extends Model
         $author->update($data);
         return $author;
     }
+
+    public static function deleteAuthor(int $authorId): bool
+    {
+        return self::getAuthorById($authorId)->delete();
+    }
 }

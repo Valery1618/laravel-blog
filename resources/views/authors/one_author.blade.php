@@ -4,7 +4,14 @@
 @section('header', 'Новини автора: ' . $author->name)
 
 @section('content')
+    <div class="d-flex gap-2 mb-3">
     <a href="{{ route('authors.editAuthor', $author->id) }}" class="btn btn-warning mb-3">Редагувати автора</a>
+        <form action="{{ route('authors.destroyAuthor', $author->id) }}" method="POST" onsubmit="return confirm('Точно видалити автора?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger mb-3">Видалити автора</button>
+        </form>
+    </div>
     @forelse($author->news as $news)
         <div class="card mb-3">
             <div class="card-body">
