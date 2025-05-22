@@ -40,6 +40,7 @@ Route::post('/rubrics/create',  [RubricController::class, 'storeRubric'])->name(
 Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])->name('rubrics.loadOneRubric');
 Route::get('/rubrics/{id}/edit', [RubricController::class, 'editRubricForm'])->name('rubrics.editRubric');
 Route::put('/rubrics/{id}',  [RubricController::class, 'updateRubric'])->name('rubrics.updateRubric');
+Route::delete('/rubrics/{id}',  [RubricController::class, 'destroyRubric'])->name('rubrics.destroyRubric');
 
 
 

@@ -41,4 +41,9 @@ class Rubric extends Model
         return $rubric;
     }
 
+    public static function deleteRubric(int $rubricId): bool
+    {
+        return self::getRubricById($rubricId)->delete();
+    }
+
 }

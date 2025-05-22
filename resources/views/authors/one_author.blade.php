@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="d-flex gap-2 mb-3">
-    <a href="{{ route('authors.editAuthor', $author->id) }}" class="btn btn-warning mb-3">Редагувати автора</a>
+        <a href="{{ route('authors.editAuthor', $author->id) }}" class="btn btn-warning mb-3">Редагувати автора</a>
         <form action="{{ route('authors.destroyAuthor', $author->id) }}" method="POST" onsubmit="return confirm('Точно видалити автора?')">
             @csrf
             @method('DELETE')
