@@ -48,4 +48,9 @@ class News extends Model
         $news->update($data);
         return $news;
     }
+
+    public static function deleteNews(int $id): bool
+    {
+       return self::getOne($id)->delete();
+    }
 }

@@ -30,9 +30,9 @@ class AuthorController extends Controller
         $validated =  $request->validate([
             'name'  => 'required|string|max:255'
         ]);
-        Author::createAuthor($validated);
+        $author = Author::createAuthor($validated);
 
-        return redirect()->route('authors.loadAuthors')->with('success', 'Додано нового автора');
+        return redirect()->route('authors.loadOneAuthor', $author->id)->with('success', 'Додано нового автора');
     }
 
     public function editAuthorForm($authorId): View
