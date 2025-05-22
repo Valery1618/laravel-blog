@@ -29,9 +29,9 @@ class RubricController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255'
         ]);
-        Rubric::createRubric($validated);
+        $rubric = Rubric::createRubric($validated);
 
-        return redirect()->route('rubrics.loadRubrics')->with('success', 'Нова рубрика додана');
+        return redirect()->route('rubrics.loadOneRubric', $rubric->id)->with('success', 'Нова рубрика додана');
     }
 
     public function editRubricForm(int $rubricId): View

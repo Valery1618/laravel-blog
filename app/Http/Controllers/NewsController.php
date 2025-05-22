@@ -40,9 +40,9 @@ class NewsController extends Controller
            'rubric_id' => 'required|exists:rubrics,id',
         ]);
 
-        News::createNews($validated);
+        $news = News::createNews($validated);
 
-        return redirect()->route('news.showList')->with('success', 'Новина додана');
+        return redirect()->route('news.showOne',$news->id)->with('success', 'Новина додана');
     }
 
     // Update function
@@ -67,6 +67,12 @@ class NewsController extends Controller
         News::editNews($id, $validated);
 
         return redirect()->route('news.showOne', $id)->with('success', 'Новина оновлена');
+    }
+
+    public function destroy(int $id): RedirectResponse
+    {
+        News::deleteNews($id);
+        return redirect()->route('news.showList')->with('success', 'Новина видалена');
     }
 
 
