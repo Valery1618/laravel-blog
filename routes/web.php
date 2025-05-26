@@ -20,41 +20,36 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/news', [NewsController::class, 'showList'])->name('news.showList');
-Route::get('/news/create',  [NewsController::class, 'getForm'])->name('news.createNews');
-Route::post('/news/create', [NewsController::class, 'store'])->name('news.storeNews');
-Route::get('/news/{id}', [NewsController::class, 'showOne'])->name('news.showOne');
-Route::get('/news/{id}/edit', [NewsController::class, 'editForm'])->name('news.editNews');
-Route::put('/news/{id}', [NewsController::class, 'updateNews'])->name('news.updateNews');
-Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
-Route::get('/authors', [AuthorController::class, 'loadAuthors'])->name('authors.loadAuthors');
-Route::get('/authors/create', [AuthorController::class, 'getAuthorForm'])
-    ->name('authors.createAuthor');
-Route::post('/authors/create', [AuthorController::class, 'storeAuthor'])
-    ->name('authors.storeAuthor');
-Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])
-    ->name('authors.loadOneAuthor');
-Route::get('/authors/{id}/edit', [AuthorController::class, 'editAuthorForm'])
-    ->name('authors.editAuthor');
-Route::put('/authors/{id}', [AuthorController::class, 'updateAuthor'])
-    ->name('authors.updateAuthor');
-Route::delete('/authors/{id}', [AuthorController::class, 'destroyAuthor'])
-    ->name('authors.destroyAuthor');
-Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.loadRubrics');
-Route::get('/rubrics/create', [RubricController::class, 'getRubricForm'])
-    ->name('rubrics.createRubric');
-Route::post('/rubrics/create',  [RubricController::class, 'storeRubric'])
-    ->name('rubrics.storeRubric');
-Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])
-    ->name('rubrics.loadOneRubric');
-Route::get('/rubrics/{id}/edit', [RubricController::class, 'editRubricForm'])
-    ->name('rubrics.editRubric');
-Route::put('/rubrics/{id}',  [RubricController::class, 'updateRubric'])
-    ->name('rubrics.updateRubric');
-Route::delete('/rubrics/{id}',  [RubricController::class, 'destroyRubric'])
-    ->name('rubrics.destroyRubric');
 
+Route::prefix('news')->name('news.')->group(function () {
+    Route::get('/', [NewsController::class, 'showList'])->name('showList');
+    Route::get('/create', [NewsController::class, 'getForm'])->name('createNews');
+    Route::post('/create', [NewsController::class, 'store'])->name('storeNews');
+    Route::get('/{id}', [NewsController::class, 'showOne'])->name('showOne');
+    Route::get('/{id}/edit', [NewsController::class, 'editForm'])->name('editNews');
+    Route::put('/{id}', [NewsController::class, 'updateNews'])->name('updateNews');
+    Route::delete('/{id}', [NewsController::class, 'destroy'])->name('destroy');
+});
 
+Route::prefix('authors')->name('authors.')->group(function () {
+    Route::get('/', [AuthorController::class, 'loadAuthors'])->name('loadAuthors');
+    Route::get('/create', [AuthorController::class, 'getAuthorForm'])->name('createAuthor');
+    Route::post('/create', [AuthorController::class, 'storeAuthor'])->name('storeAuthor');
+    Route::get('/{id}', [AuthorController::class, 'loadOneAuthor'])->name('loadOneAuthor');
+    Route::get('/{id}/edit', [AuthorController::class, 'editAuthorForm'])->name('editAuthor');
+    Route::put('/{id}', [AuthorController::class, 'updateAuthor'])->name('updateAuthor');
+    Route::delete('/{id}', [AuthorController::class, 'destroyAuthor'])->name('destroyAuthor');
+});
+
+Route::prefix('rubrics')->name('rubrics.')->group(function () {
+    Route::get('/', [RubricController::class, 'loadRubrics'])->name('loadRubrics');
+    Route::get('/create', [RubricController::class, 'getRubricForm'])->name('createRubric');
+    Route::post('/create', [RubricController::class, 'storeRubric'])->name('storeRubric');
+    Route::get('/{id}', [RubricController::class, 'loadOneRubric'])->name('loadOneRubric');
+    Route::get('/{id}/edit', [RubricController::class, 'editRubricForm'])->name('editRubric');
+    Route::put('/{id}', [RubricController::class, 'updateRubric'])->name('updateRubric');
+    Route::delete('/{id}', [RubricController::class, 'destroyRubric'])->name('destroyRubric');
+});
 
 
 require __DIR__.'/auth.php';
