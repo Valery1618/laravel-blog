@@ -18,6 +18,12 @@
             @hasSection('add-button')
                 @yield('add-button')
             @endif
+
+            <form action="{{ route('logout') }}" method="POST" class="d-inline ms-3">
+                @csrf
+                <button type="submit" class="btn btn-outline-light btn-sm">Вийти</button>
+            </form>
+
         </div>
     </div>
 </nav>
