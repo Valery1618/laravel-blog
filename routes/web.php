@@ -28,19 +28,31 @@ Route::get('/news/{id}/edit', [NewsController::class, 'editForm'])->name('news.e
 Route::put('/news/{id}', [NewsController::class, 'updateNews'])->name('news.updateNews');
 Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 Route::get('/authors', [AuthorController::class, 'loadAuthors'])->name('authors.loadAuthors');
-Route::get('/authors/create', [AuthorController::class, 'getAuthorForm'])->name('authors.createAuthor');
-Route::post('/authors/create', [AuthorController::class, 'storeAuthor'])->name('authors.storeAuthor');
-Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])->name('authors.loadOneAuthor');
-Route::get('/authors/{id}/edit', [AuthorController::class, 'editAuthorForm'])->name('authors.editAuthor');
-Route::put('/authors/{id}', [AuthorController::class, 'updateAuthor'])->name('authors.updateAuthor');
-Route::delete('/authors/{id}', [AuthorController::class, 'destroyAuthor'])->name('authors.destroyAuthor');
+Route::get('/authors/create', [AuthorController::class, 'getAuthorForm'])
+    ->name('authors.createAuthor');
+Route::post('/authors/create', [AuthorController::class, 'storeAuthor'])
+    ->name('authors.storeAuthor');
+Route::get('/authors/{id}', [AuthorController::class, 'loadOneAuthor'])
+    ->name('authors.loadOneAuthor');
+Route::get('/authors/{id}/edit', [AuthorController::class, 'editAuthorForm'])
+    ->name('authors.editAuthor');
+Route::put('/authors/{id}', [AuthorController::class, 'updateAuthor'])
+    ->name('authors.updateAuthor');
+Route::delete('/authors/{id}', [AuthorController::class, 'destroyAuthor'])
+    ->name('authors.destroyAuthor');
 Route::get('/rubrics', [RubricController::class, 'loadRubrics'])->name('rubrics.loadRubrics');
-Route::get('/rubrics/create', [RubricController::class, 'getRubricForm'])->name('rubrics.createRubric');
-Route::post('/rubrics/create',  [RubricController::class, 'storeRubric'])->name('rubrics.storeRubric');
-Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])->name('rubrics.loadOneRubric');
-Route::get('/rubrics/{id}/edit', [RubricController::class, 'editRubricForm'])->name('rubrics.editRubric');
-Route::put('/rubrics/{id}',  [RubricController::class, 'updateRubric'])->name('rubrics.updateRubric');
-Route::delete('/rubrics/{id}',  [RubricController::class, 'destroyRubric'])->name('rubrics.destroyRubric');
+Route::get('/rubrics/create', [RubricController::class, 'getRubricForm'])
+    ->name('rubrics.createRubric');
+Route::post('/rubrics/create',  [RubricController::class, 'storeRubric'])
+    ->name('rubrics.storeRubric');
+Route::get('/rubrics/{id}', [RubricController::class, 'loadOneRubric'])
+    ->name('rubrics.loadOneRubric');
+Route::get('/rubrics/{id}/edit', [RubricController::class, 'editRubricForm'])
+    ->name('rubrics.editRubric');
+Route::put('/rubrics/{id}',  [RubricController::class, 'updateRubric'])
+    ->name('rubrics.updateRubric');
+Route::delete('/rubrics/{id}',  [RubricController::class, 'destroyRubric'])
+    ->name('rubrics.destroyRubric');
 
 
 
